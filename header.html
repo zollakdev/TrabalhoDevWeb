@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/icon-astronauta.ico" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <title>Astrosteam</title>
+  </head>
+  <!-- header.html -->
+  <header>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-3">
+          <div class="logo">
+            <a href="/index.html">
+              <img src="/Background.png" alt="logo" />
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="menu">
+            <ul class="nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Store</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/community.html">Community</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="supportLink" href="#">Support</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="supportModal" class="modal">
+          <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <p>Entre em contato conosco:</p>
+            <a
+              href="https://api.whatsapp.com/send?phone=SEUNUMERO"
+              target="_blank"
+            >
+              <img src="/icon-whatsapp.png" alt="WhatsApp" />
+            </a>
+            <a href="mailto:seuemail@gmail.com">
+              <img src="/icon-gmail.png" alt="Gmail" />
+            </a>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="search">
+            <input
+              type="text"
+              placeholder="Search..."
+              class="form-control search-text"
+              id="searchInput"
+            />
+            <button
+              id="searchButton"
+              class="btn btn-primary"
+              onclick="searchDiv()"
+            >
+              &#128269;
+            </button>
+            <div class="in-ss">
+              <a href="/login.html" id="in-ss" class="in-ss-text">
+                Iniciar sessão
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</html>

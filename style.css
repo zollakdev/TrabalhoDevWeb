@@ -1,0 +1,342 @@
+/* Estilos gerais para limpar margens e preenchimentos padrão */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para o fundo animado */
+.fundo-animado {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Coloca o GIF atrás de todo o conteúdo */
+}
+
+/* Estilos para o cabeçalho */
+header {
+  background-color: #000 !important; /* Defina a cor de fundo para preto com !important */
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h5 {
+  color: #fff;
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Estilos para o logotipo */
+.logo img {
+  max-width: 200px;
+  height: auto;
+  padding: 0;
+  margin: 0;
+}
+
+/* Estilos para o menu de navegação */
+.menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.menu li {
+  margin-right: 20px;
+}
+
+.menu a {
+  font-size: 23px;
+  text-decoration: none;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+}
+
+.menu a:hover {
+  color: rgb(39, 9, 137);
+  text-decoration: underline;
+}
+
+div .in-ss {
+  color: rgb(39, 9, 137);
+  text-decoration: underline;
+  padding-left: 40px;
+}
+/* Estilos para o campo de pesquisa */
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search input[type="text"] {
+  margin-right: 30px;
+  width: 150px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  background-color: transparent;
+}
+
+.search-text:hover {
+  background-color: rgb(11, 23, 86);
+}
+
+/* Estilos para o botão de pesquisa */
+
+.search button {
+  padding: 6px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgb(11, 23, 86);
+  color: #ffffff;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+}
+
+/* Estilos aba iniciar sessão */
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 100px;
+  /*border: rgb(6, 3, 214) 1px solid;*/
+  background-color: transparent;
+  border-radius: 10px;
+  color: #fff;
+  padding-bottom: 20px;
+}
+
+.Login::before {
+  border: 3px solid transparent; /* Define uma borda transparente */
+  border-top-color: white; /* Define a cor da borda superior como branco (ou sua cor desejada) */
+  border-radius: 50%; /* Torna a borda circular */
+  z-index: -1; /* Coloca o brilho atrás do elemento */
+}
+
+.logar {
+  font-style: normal;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+label {
+  display: block; /* Coloca cada rótulo em uma linha separada */
+  margin-bottom: 5px; /* Adiciona espaço abaixo do rótulo */
+}
+
+.logar input[type="email"] {
+  display: block;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 400px;
+  height: 50px;
+  font-size: 25px;
+}
+
+.logar input[type="password"] {
+  display: block;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 400px;
+  height: 50px;
+  font-size: 25px;
+}
+
+.ir {
+  padding: 20px;
+  height: 70px;
+  width: 400px;
+  display: block;
+  margin-bottom: 40px;
+  background: linear-gradient(
+    to right,
+    rgb(35, 11, 121),
+    rgb(11, 5, 52),
+    rgb(6, 12, 46)
+  );
+  border: rgb(6, 3, 214) 1px solid;
+  border-radius: 5px;
+  transition: filter 0.3 ease;
+  color: #fff;
+  font-size: 20px;
+}
+.ir:hover {
+  filter: brightness(1.2);
+}
+
+h2 {
+  color: #fff;
+  font-weight: bold;
+  font-style: italic;
+}
+
+p {
+  color: #fff;
+}
+/* Estilos para o carousel */
+
+.carousel {
+  padding-top: 40px;
+}
+
+/* Estilos para as imagens dentro da classe .carrossel-item */
+.carousel-item img {
+  width: 800px;
+  height: 500px;
+  display: block;
+  margin: 0px auto;
+  border: 10px solid rgba(7, 2, 43, 0.365);
+  border-radius: 10%;
+
+  /* Defina o z-index desejado para controlar a sobreposição das imagens */
+  z-index: 1; /* Você pode ajustar esse valor conforme necessário */
+}
+
+/* Estilos para ocultar as imagens do carrossel */
+.carousel-item {
+  display: none;
+}
+
+/* Estilo para mostrar a imagem atual */
+.carousel-item.active {
+  display: block;
+}
+
+/* Estilos para os botões de navegação do carrossel */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(to right, #030541, #06041e);
+  font-weight: bold;
+  color: #fff;
+  padding: 20px 20px;
+  border: none;
+  cursor: pointer;
+  z-index: 2; /* Coloca os botões acima das imagens do carrossel */
+}
+
+#prevBtn {
+  font-size: 100px;
+  border-radius: 10px;
+  height: 300px;
+  width: 100px;
+  margin-top: 200px;
+  left: 10px;
+  outline: none;
+}
+
+#nextBtn {
+  font-size: 100px;
+  border-radius: 10px;
+  height: 300px;
+  width: 100px;
+  margin-top: 200px;
+  right: 10px;
+  outline: none;
+}
+
+#nextBtn:active {
+  border: 3px solid rgba(239, 9, 9, 0.505);
+}
+
+#prevBtn:active {
+  border: 3px solid rgba(56, 2, 252, 0.518);
+}
+
+.carousel-btn:hover {
+  background-color: rgba(6, 3, 214, 0.194);
+}
+/* Estilos para as divs de informações do jogo */
+.jogos {
+  padding-top: 800px;
+}
+.game-info {
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+/* Estilos para o modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  outline: none;
+}
+
+.modal-content {
+  background: linear-gradient(to right, #030541, #06041e);
+  margin: 40px auto;
+  padding: 0;
+  width: 45%;
+  height: 300px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  animation: moveLine 2.5s linear infinite; /* Animação para mover o modal */
+}
+/* Animação para mover a linha em volta */
+@keyframes moveLine {
+  0%,
+  100% {
+    border-left: 4px solid transparent; /* Inicia e termina transparente na esquerda */
+    border-right: 4px solid transparent; /* Inicia e termina transparente na direita */
+  }
+  25% {
+    border-left: 4px solid #0800ff; /* Começa a partir da esquerda, a linha é azul na esquerda */
+  }
+  50% {
+    border-left: 4px solid transparent; /* Metade do caminho, a linha é transparente na esquerda */
+    border-right: 4px solid transparent; /* Metade do caminho, a linha é transparente na direita */
+  }
+  75% {
+    border-right: 4px solid #ff0000; /* Começa a partir da direita, a linha é vermelha na direita */
+  }
+}
+
+.modal-content p {
+  font-size: 30px;
+  color: #ffffff;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.modal-content img {
+  width: 50px;
+  height: auto;
+  padding-bottom: 30px;
+}
+
+.close {
+  float: center;
+  cursor: pointer;
+  font-size: 40px;
+  padding-top: 0;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.close:hover {
+  color: red;
+}
