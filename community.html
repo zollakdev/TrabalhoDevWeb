@@ -1,30 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Seu cabeçalho existente aqui -->
-
-    <!-- Adicione os estilos Bootstrap -->
+    <meta charset="UTF-8" />
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
-
-    <!-- Seus estilos personalizados -->
     <link rel="stylesheet" href="/style.css" />
 
-    <!-- Seu título da página -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
     <title>Astrosteam</title>
   </head>
   <body>
     <img
-      src="/starfall-gif-46.gif"
+      src="images/starfall-gif-46.gif"
       alt="GIF animado"
       class="fundo-animado"
       loop
     />
     <header id="headerContainer"></header>
     <main>
-      <!-- Componente de navegação para alternar entre as seções -->
       <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item">
           <a
@@ -52,19 +48,15 @@
             Comunidade
           </a>
         </li>
-        <!-- Outras seções podem ser adicionadas aqui -->
       </ul>
 
-      <!-- Conteúdo das seções -->
       <div class="tab-content" id="myTabContent">
-        <!-- Seção Início -->
         <div
           class="tab-pane fade show active"
           id="home"
           role="tabpanel"
           aria-labelledby="home-tab"
         >
-          <!-- Conteúdo da seção "Início" com texto de exemplo -->
           <h2>Bem-vindo à Página Inicial</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget
@@ -75,53 +67,75 @@
             magna, nec ultricies urna dui sit amet arcu. Integer bibendum justo
             eget felis vehicula, ut ullamcorper elit vehicula.
           </p>
-          <br>
-
+          <br />
           <h5>Notas de atulizações do site</h5>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
-            dolore maxime rem eius corrupti commodi culpa expedita porro sapiente,
-            minima sed, vero accusantium dolor reiciendis cumque repudiandae
-            maiores ut distinctio.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Consequuntur dolore maxime rem eius corrupti commodi culpa expedita
+            porro sapiente, minima sed, vero accusantium dolor reiciendis cumque
+            repudiandae maiores ut distinctio.
           </p>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
-            dolore maxime rem eius corrupti commodi culpa expedita porro sapiente,
-            minima sed, vero accusantium dolor reiciendis cumque repudiandae
-            maiores ut distinctio.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Consequuntur dolore maxime rem eius corrupti commodi culpa expedita
+            porro sapiente, minima sed, vero accusantium dolor reiciendis cumque
+            repudiandae maiores ut distinctio.
           </p>
         </div>
 
-        <!-- Seção Comunidade -->
         <div
           class="tab-pane fade"
           id="profile"
           role="tabpanel"
           aria-labelledby="profile-tab"
         >
-          <!-- Conteúdo da seção "Comunidade" com texto de exemplo -->
           <h2>Bem-vindo à Comunidade</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget
-            quam eu metus iaculis feugiat ut nec lorem.
-          </p>
-          <p>
-            Sed vehicula, ipsum a tincidunt viverra, mi justo sollicitudin
-            magna, nec ultricies urna dui sit amet arcu. Integer bibendum justo
-            eget felis vehicula, ut ullamcorper elit vehicula.
-          </p>
+          <div id="comments-container"></div>
+          <form id="comment-form">
+            <div class="form-group">
+              <h4>Logue Para interagir com os usuários</h4>
+            </div>
+          </form>
         </div>
-      
-
-        <!-- Outras seções podem ser adicionadas aqui -->
-       
+      </div>
     </main>
-    <footer></footer>
+    <div id="footerContainer">
+      <footer>© Astrosteam</footer>
+    </div>
 
-    <!-- Adicione os scripts Bootstrap e seus scripts personalizados -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="/script.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        function addComment(username, message) {
+          var commentHtml =
+            '<div class="comment"><strong>' +
+            username +
+            ":</strong> " +
+            message +
+            "</div>";
+          $("#comments-container").append(commentHtml);
+        }
+
+        function simulateConversation() {
+          setInterval(function () {
+            addComment("Usuário1", "Lorem ipsum dolor sit amet.");
+            addComment("Usuário2", "Consectetur adipiscing elit.");
+          }, 10000);
+        }
+
+        simulateConversation();
+
+        $("#comment-form").submit(function (event) {
+          event.preventDefault();
+          var username = "NomeDoUsuario";
+          var message = $("#comment").val();
+          addComment(username, message);
+          $("#comment").val("");
+        });
+      });
+    </script>
   </body>
 </html>

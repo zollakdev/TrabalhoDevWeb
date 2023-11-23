@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="shortcut icon" href="images/icon-astronauta.ico" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>Astrosteam</title>
+  </head>
+  <body>
+    <img
+      src="images/starfall-gif-46.gif"
+      alt="GIF animado"
+      class="fundo-animado"
+      loop
+    />
+
+    <header id="headerContainer"></header>
+
+    <main id="chamado">
+      <form id="chamadoForm" method="post" action="criar_chamado.php">
+        <h1>Redefinir Senha</h1>
+        <br />
+        <label for="email">SEU EMAIL:</label>
+        <input type="text" name="email" class="chamadoEmail" required />
+        <br />
+        <br />
+        <input type="submit" value="Enviar" id="chamadoSub" name="criar" />
+      </form>
+    </main>
+
+    <div id="footerContainer">
+      <footer>© Astrosteam</footer>
+    </div>
+
+    <img
+      src="images/starfall-gif-46.gif"
+      alt="GIF animado"
+      class="fundo-animado"
+      loop
+    />
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/script.js"></script>
+  </body>
+</html>

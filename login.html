@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="/icon-astronauta.ico" />
+    <link rel="shortcut icon" href="images/icon-astronauta.ico" />
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -17,7 +17,7 @@
   </head>
   <body>
     <img
-      src="/starfall-gif-46.gif"
+      src="images/starfall-gif-46.gif"
       alt="GIF animado"
       class="fundo-animado"
       loop
@@ -25,26 +25,29 @@
     <header id="headerContainer"></header>
     <main class="login">
       <h1>Iniciar Sessão</h1>
-      <form action="#" method="post">
+      <form action="/login.php" method="post">
         <div class="logar">
+          <label for="email">E-mail: </label>
+          <input type="email" id="email" name="email" required />
+          <br /><br />
 
-        <!-- Campo de Nome -->
-        <label for="email">E-mail: </label>
-        <input type="email" id="email" name="email" required />
-        <br /><br />
+          <label for="senha">Senha: </label>
+          <input type="password" id="senha" name="senha" required />
 
-        <!-- Campo de E-mail -->
-        <label for="Password">Password: </label>
-        <input type="password" id="password" name="password" required />
-        <br /><br />
-          <!-- Botão de Envio -->
-        <input type="submit" value="Enviar" class="ir" />
+          <a href="/registro.html" class="reg"
+            >Não tem uma conta? Registre-se</a
+          >
+          <br />
+          <a href="/criar_chamado.html" class="reg">Esqueceu a senha?</a>
+          <br /><br />
+
+          <input type="submit" value="Enviar" class="ir" name="login" />
+        </div>
       </form>
-    </div>
     </main>
-    <footer>
-   
-    </footer>
+    <div id="footerContainer">
+      <footer>© Astrosteam</footer>
+    </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

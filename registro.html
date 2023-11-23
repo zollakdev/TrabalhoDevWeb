@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="images/icon-astronauta.ico" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    />
+    <title>Astrosteam</title>
+  </head>
+  <body>
+    <img
+      src="images/starfall-gif-46.gif"
+      alt="GIF animado"
+      class="fundo-animado"
+      loop
+    />
+    <header id="headerContainer"></header>
+    <main class="registro">
+      <h1>Registrar uma nova conta</h1>
+      <br />
+      <form action="/registro.php" method="post">
+        <div class="registrar">
+          <!-- Campo de Nome de Usuário -->
+          <label for="nome_usuario">Nome de Usuário: </label>
+          <input type="text" id="nome_usuario" name="nome_usuario" required />
+          <br /><br />
+
+          <!-- Campo de E-mail -->
+          <label for="email">E-mail: </label>
+          <input type="email" id="email" name="email" required />
+          <br /><br />
+
+          <!-- Campo de Senha -->
+          <label for="senha">Senha: </label>
+          <input type="password" id="senha" name="senha" required />
+          <br /><br />
+          <!-- Campo de Data de Nascimento -->
+          <label for="data_nascimento">Data de Nascimento: </label>
+          <input
+            type="date"
+            id="data_nascimento"
+            name="data_nascimento"
+            required
+          />
+
+          <!-- Link para a página de login -->
+          <a href="login.html" class="reg">Já tem uma conta? Faça login</a>
+          <br /><br />
+
+          <!-- Botão de Envio (adicionado o nome "registro") -->
+          <input type="submit" value="Registrar" class="ir" name="registro" />
+        </div>
+      </form>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/script.js"></script>
+  </body>
+</html>

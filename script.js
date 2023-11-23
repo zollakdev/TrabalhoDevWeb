@@ -1,4 +1,4 @@
-// Função para carregar o header usando JavaScript
+// Função para carregar o header
 function loadHeader() {
   const headerContainer = document.getElementById("headerContainer");
   const xhr = new XMLHttpRequest();
@@ -21,7 +21,6 @@ function loadHeader() {
   xhr.send();
 }
 
-// Carregue o header quando a página for carregada
 document.addEventListener("DOMContentLoaded", loadHeader);
 
 // Função para abrir o modal
@@ -30,13 +29,11 @@ function openModal() {
   modal.style.display = "block";
 }
 
-// Função para fechar o modal
 function closeModal() {
   var modal = document.getElementById("supportModal");
   modal.style.display = "none";
 }
 
-// Associando eventos aos elementos (após o modal ter sido carregado)
 document.addEventListener("DOMContentLoaded", function () {
   var supportLink = document.getElementById("supportLink");
   supportLink.addEventListener("click", openModal);
@@ -50,30 +47,26 @@ function searchDiv() {
   var gameInfos = document.querySelectorAll(".game-info");
 
   if (searchTerm.trim() !== "") {
-    // Itera por todas as divs com a classe "game-info"
     gameInfos.forEach(function (gameInfo) {
       var gameTitle = gameInfo.querySelector("h2").textContent.toLowerCase();
 
-      // Verifica se o termo de pesquisa corresponde ao título do jogo (ignorando maiúsculas e minúsculas)
       if (gameTitle.includes(searchTerm.toLowerCase())) {
         gameInfo.style.display = "block";
 
-        // Rola a página até o item correspondente
         gameInfo.scrollIntoView({ behavior: "smooth" });
       } else {
         gameInfo.style.display = "none";
       }
     });
   } else {
-    // Se o campo de pesquisa estiver vazio, exibe todos os jogos
     gameInfos.forEach(function (gameInfo) {
       gameInfo.style.display = "block";
     });
   }
 }
 
+// funcao carrossel
 document.addEventListener("DOMContentLoaded", function () {
-  // Variáveis para controle do carrossel
   const carouselItems = document.querySelectorAll(".carousel-item");
   const prevBtn = document.getElementById("prevBtn");
   const nextBtn = document.getElementById("nextBtn");
@@ -107,9 +100,135 @@ document.addEventListener("DOMContentLoaded", function () {
   nextBtn.addEventListener("click", nextSlide);
   prevBtn.addEventListener("click", prevSlide);
 
-  // Chama a função startCarousel para começar no índice desejado (por exemplo, 2 para a terceira imagem)
   startCarousel(2);
 
-  // Troca de slide automaticamente a cada 5 segundos
   setInterval(nextSlide, 10000);
 });
+
+var nomeUsuario = "Nome do Usuário";
+
+// Função para atualizar o cabeçalho com o ícone e o nome do usuário
+function atualizarHeader() {
+  var userIcon = document.getElementById("userIcon");
+  var userName = document.getElementById("userName");
+
+  userIcon.src = "user-icon.png";
+
+  userName.textContent = nomeUsuario;
+}
+
+atualizarHeader();
+
+function openGameModal(gameId, gameName) {
+  var gameInfo = document.getElementById(gameId);
+  var videoSrc = gameInfo.getAttribute("data-video");
+
+  document.getElementById("modal-title").textContent = gameName;
+  document.getElementById("game-video").setAttribute("src", videoSrc);
+
+  var modal = document.getElementById("gameModal");
+  modal.style.display = "block";
+}
+
+function closeGameModal() {
+  var modal = document.getElementById("gameModal");
+  modal.style.display = "none";
+  var video = document.getElementById("game-video");
+  video.setAttribute("src", "");
+}
+
+document
+  .querySelector('a[href="#sobreNos"]')
+  .addEventListener("click", function (e) {
+    e.preventDefault();
+    const targetSection = document.querySelector("#sobreNos");
+    if (targetSection) {
+      targetSection.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  });
+
+function loadFooter() {
+  const footerContainer = document.getElementById("footerContainer");
+  const xhr = new XMLHttpRequest();
+
+  xhr.open("GET", "footer.html", true);
+
+  xhr.onload = function () {
+    if (xhr.status === 200) {
+      footerContainer.innerHTML = xhr.responseText;
+    }
+  };
+
+  xhr.send();
+}
+
+document.addEventListener("DOMContentLoaded", loadFooter);
+
+var selectedGames = [];
+var buyButton;
+
+function addToCart(gameName, gamePrice) {
+  selectedGames = selectedGames || [];
+
+  var existingGameIndex = selectedGames.findIndex(function (game) {
+    return game.name === gameName;
+  });
+
+  if (existingGameIndex === -1) {
+    selectedGames.push({ name: gameName, price: gamePrice });
+  } else {
+    selectedGames.splice(existingGameIndex, 1);
+  }
+
+  updateCartModal();
+}
+function buyGame() {
+  alert("jogo adicionado ao carrinho!");
+
+  if (!buyButton) {
+    addToCart("Minecraft", 19.99);
+    buyButton = true;
+  } else {
+    addToCart("The Legend of Zelda", 29.99);
+  }
+}
+
+function updateCartModal() {
+  var selectedGamesList = document.getElementById("selectedGamesList");
+
+  if (selectedGamesList) {
+    selectedGamesList.innerHTML = "";
+
+    selectedGames.forEach(function (game) {
+      var listItem = document.createElement("li");
+      listItem.textContent = game.name + " - $" + game.price.toFixed(2);
+      selectedGamesList.appendChild(listItem);
+    });
+  } else {
+    console.error("Elemento com o ID selectedGamesList não encontrado.");
+  }
+}
+
+function closeCartModal() {
+  var cartModal = document.getElementById("cartModal");
+  if (cartModal) {
+    cartModal.style.display = "none";
+  } else {
+    console.error("Elemento com o ID cartModal não encontrado.");
+  }
+}
+
+function openCartModal() {
+  var cartModal = document.getElementById("cartModal");
+  if (cartModal) {
+    cartModal.style.display = "block";
+  } else {
+    console.error("Elemento com o ID cartModal não encontrado.");
+  }
+}
+
+function redirectToBuyPage() {
+  window.location.href = "comprar.html";
+}

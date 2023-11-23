@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="shortcut icon" href="images/icon-astronauta.ico" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>Astrosteam</title>
+  </head>
+  <body>
+    <img
+      src="images/starfall-gif-46.gif"
+      alt="GIF animado"
+      class="fundo-animado"
+      loop
+    />
+
+    <header id="headerContainer"></header>
+
+    <main>
+      <form
+        class="form-redefinir"
+        method="post"
+        action="redefinir_senha.php"
+        onsubmit="return verificarSenhasIguais();"
+      >
+        <h1>Redefinir Senha</h1>
+        <br />
+        <label class="label" for="email">Email:</label>
+        <input class="input" type="email" id="email" name="email" required />
+
+        <label class="label" for="nova_senha">Nova Senha:</label>
+        <input
+          class="input"
+          type="password"
+          id="nova_senha"
+          name="nova_senha"
+          required
+        />
+
+        <label class="label" for="confirmacao_senha"
+          >Confirme a Nova Senha:</label
+        >
+        <input
+          class="input"
+          type="password"
+          id="confirmacao_senha"
+          name="confirmacao_senha"
+          required
+        />
+
+        <button class="btn-redefinir" type="submit">Enviar</button>
+      </form>
+    </main>
+
+    <div id="footerContainer">
+      <footer>© Astrosteam</footer>
+    </div>
+
+    <img
+      src="images/starfall-gif-46.gif"
+      alt="GIF animado"
+      class="fundo-animado"
+      loop
+    />
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/script.js"></script>
+    <script src="verificar_senhas.js"></script>
+  </body>
+</html>
